@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fakulta SYSTEM "fakulta.dtd">
+<!--
+    Chtěl bych také zaznamenat fakulty univerzity. O každé fakultě
+    zaznamenávejte informace jako: děkan, katedry, vedoucí kateder,
+    zaměstnanci, kontakt na zaměstnance, pozice zaměstnanců, tituly
+    a další zajímavé informace.
+-->
+
+<fakulta děkan="">
+    <katedra zkratka_katedry="">
+        <vedoucí>
+            <jméno></jméno>
+            <telefon></telefon>
+            <email></email>
+        </vedoucí>
+        <zaměstnanci>
+            <zaměstnanec>
+                <jméno></jméno>
+                <telefon></telefon>
+                <pozice>
+                </pozice>
+            </zaměstnanec>
+        </zaměstnanci>
+        <předměty>
+        </předměty>
+    </katedra>
+</fakulta>

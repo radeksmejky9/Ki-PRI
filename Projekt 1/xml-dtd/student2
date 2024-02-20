@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Chtěl bych vytvořit webovou aplikaci pro záznam studentů naší univerzity. O studentovi
+     zaznamenávejte informace: jméno, příjmení, studentské číslo, email, studijní rok, rozvrh,
+      předměty, splněné předměty a další zajímavé informace.-->
+<studenti>
+    <student st="" f="">
+        <jmeno></jmeno>
+        <prijmeni></prijmeni>
+        <email></email>
+        <studRok></studRok>
+        <predmety>
+            <splnenePredmety>
+                <predmet></predmet>
+            </splnenePredmety>
+            <studovanePredmety>
+            </studovanePredmety>
+        </predmety>
+        <rozvrh></rozvrh>
+    </student>
+</studenti>
