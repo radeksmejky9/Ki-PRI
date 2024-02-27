@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Chtěl bych také zaznamenat fakulty univerzity. O každé fakultě
+    zaznamenávejte informace jako: děkan, katedry, vedoucí kateder,
+    zaměstnanci, kontakt na zaměstnance, pozice zaměstnanců, tituly
+    a další zajímavé informace.
+-->
+<fakulty>
+    <fakulta>
+        <dekan>
+            <jmeno></jmeno>
+            <prijmeni></prijmeni>
+            <telefon></telefon>
+            <email></email>
+            <tituly>
+                <titul></titul>
+            </tituly>
+        </dekan>
+        <katedry>
+            <katedra>
+                <nazev></nazev>
+                <vedouci>
+                    <jmeno></jmeno>
+                    <prijmeni></prijmeni>
+                    <telefon></telefon>
+                    <email></email>
+                    <tituly>
+                        <titul></titul>
+                    </tituly>
+                </vedouci>
+                <zamestranci>
+                    <zamestnanec>
+                        <jmeno></jmeno>
+                        <prijmeni></prijmeni>
+                        <telefon></telefon>
+                        <email></email>
+                        <kontakt></kontakt>
+                        <pozice></pozice>
+                        <tituly>
+                            <titul></titul>
+                        </tituly>
+                    </zamestnanec>
+                </zamestranci>
+                <predmety>
+                    <predmet zkratka="">
+                        <nazev></nazev>
+                        <popis></popis>
+                    </predmet>
+                </predmety>
+            </katedra>
+        </katedry>
+    </fakulta>
+</fakulty>
