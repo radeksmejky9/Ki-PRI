@@ -1,101 +1,101 @@
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <xsd:element name="fakulty">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element ref="fakulta" minOccurs="0" maxOccurs="unbounded"/>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="fakulty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="fakulta" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 
-  <xsd:element name="fakulta">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element name="dekan"/>
-        <xsd:element name="katedry"/>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
+  <xs:element name="fakulta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="dekan"/>
+        <xs:element name="katedry"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 
-  <xsd:element name="dekan">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element name="jmeno"/>
-        <xsd:element name="prijmeni"/>
-        <xsd:element name="telefon"/>
-        <xsd:element name="email"/>
-        <xsd:element name="tituly"/>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
+  <xs:element name="dekan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="jmeno"/>
+        <xs:element name="prijmeni"/>
+        <xs:element name="telefon"/>
+        <xs:element name="email"/>
+        <xs:element name="tituly"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 
-  <xsd:element name="katedry">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element ref="katedra" minOccurs="0" maxOccurs="unbounded"/>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
+  <xs:element name="katedry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="katedra" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 
-  <xsd:element name="katedra">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element name="nazev"/>
-        <xsd:element name="vedouci"/>
-        <xsd:element name="zamestranci"/>
-        <xsd:element name="predmety"/>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
+  <xs:element name="katedra">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nazev"/>
+        <xs:element name="vedouci"/>
+        <xs:element name="zamestranci"/>
+        <xs:element name="predmety"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 
-  <xsd:element name="vedouci">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element name="jmeno"/>
-        <xsd:element name="prijmeni"/>
-        <xsd:element name="telefon"/>
-        <xsd:element name="email"/>
-        <xsd:element name="tituly"/>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
+  <xs:element name="vedouci">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="jmeno"/>
+        <xs:element name="prijmeni"/>
+        <xs:element name="telefon"/>
+        <xs:element name="email"/>
+        <xs:element name="tituly"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 
-  <xsd:element name="zamestranci">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element ref="zamestnanec" minOccurs="0" maxOccurs="unbounded"/>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
+  <xs:element name="zamestranci">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="zamestnanec" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 
-  <xsd:element name="zamestnanec">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element name="jmeno"/>
-        <xsd:element name="prijmeni"/>
-        <xsd:element name="telefon"/>
-        <xsd:element name="email"/>
-        <xsd:element name="kontakt"/>
-        <xsd:element name="pozice"/>
-        <xsd:element name="tituly"/>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
+  <xs:element name="zamestnanec">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="jmeno"/>
+        <xs:element name="prijmeni"/>
+        <xs:element name="telefon"/>
+        <xs:element name="email"/>
+        <xs:element name="kontakt"/>
+        <xs:element name="pozice"/>
+        <xs:element name="tituly"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 
-  <xsd:element name="predmety">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element ref="predmet" minOccurs="0" maxOccurs="unbounded"/>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
+  <xs:element name="predmety">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="predmet" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 
-  <xsd:element name="predmet">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element name="nazev"/>
-        <xsd:element name="popis"/>
-      </xsd:sequence>
-      <xsd:attribute name="zkratka" type="xsd:string" use="required"/>
-    </xsd:complexType>
-  </xsd:element>
-</xsd:schema>
+  <xs:element name="predmet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nazev"/>
+        <xs:element name="popis"/>
+      </xs:sequence>
+      <xs:attribute name="zkratka" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
