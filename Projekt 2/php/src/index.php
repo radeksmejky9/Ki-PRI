@@ -70,6 +70,7 @@
 
         return $isValid;
     }
+
     $xmlFile = @$_FILES['xml'];
     $xsdFile = @$_FILES['xsd'];
     if (@$xmlTmpName = $xmlFile['tmp_name']) {

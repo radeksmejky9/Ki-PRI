@@ -5,7 +5,7 @@
 <!ELEMENT katedra (nazev, vedouci, zamestranci, predmety)>
 <!ELEMENT vedouci (jmeno, prijmeni, telefon, email, tituly)>
 <!ELEMENT zamestranci (zamestnanec*)>
-<!ELEMENT zamestnanec (jmeno, prijmeni, telefon, email, kontankt, pozice, tituly)>
+<!ELEMENT zamestnanec (jmeno, prijmeni, telefon, email, kontakt, pozice, tituly)>
 <!ELEMENT predmety (predmet*)>
 <!ELEMENT predmet (nazev, popis)>
 <!ATTLIST predmet zkratka CDATA #REQUIRED>

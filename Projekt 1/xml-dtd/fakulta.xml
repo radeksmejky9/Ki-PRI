@@ -12,7 +12,9 @@
             <prijmeni></prijmeni>
             <telefon></telefon>
             <email></email>
-            <tituly></tituly>
+            <tituly>
+                <titul></titul>
+            </tituly>
         </dekan>
         <katedry>
             <katedra>
