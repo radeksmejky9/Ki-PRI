@@ -10,7 +10,7 @@
   <xs:element name="fakulta">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="dekan"/>
+        <xs:element ref="dekan"/>
         <xs:element name="katedry"/>
       </xs:sequence>
     </xs:complexType>
