@@ -4,4 +4,4 @@
 <!ATTLIST student f CDATA #REQUIRED>
 <!ELEMENT jmeno (#PCDATA)>
 <!ELEMENT prijmeni (#PCDATA)>
-<!ELEMENT fakulta (#PCDATA)>
+<!ELEMENT fakulta (#PCDATA)> 
