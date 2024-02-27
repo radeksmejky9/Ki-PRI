@@ -1,0 +1,21 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="studenti">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="student" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="student">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="jmeno" type="xsd:string"/>
+                <xsd:element name="prijmeni" type="xsd:string"/>
+                <xsd:element name="fakulta" type="xsd:string"/>
+            </xsd:sequence>
+            <xsd:attribute name="st" type="xsd:string" use="required"/>
+            <xsd:attribute name="f" type="xsd:string" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
