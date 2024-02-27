@@ -49,7 +49,7 @@
                 </tr>
             <?php } ?>
         </table>
-        <?php
+    <?php
     }
 
     function validate($xmlPath, $xsdPath = '')
@@ -73,10 +73,10 @@
     $xmlFile = @$_FILES['xml'];
     $xsdFile = @$_FILES['xsd'];
     if (@$xmlTmpName = $xmlFile['tmp_name']) {
-            $xsdTmpName = $xsdFile['tmp_name'];
-            $isValid = validate($xmlTmpName, $xsdTmpName);
-            if ($isValid)
-                echo "Nahraný XML soubor je validní.";
+        $xsdTmpName = $xsdFile['tmp_name'];
+        $isValid = validate($xmlTmpName, $xsdTmpName);
+        if ($isValid)
+            echo "Nahraný XML soubor je validní.";
     }
     ?>
 </body>
