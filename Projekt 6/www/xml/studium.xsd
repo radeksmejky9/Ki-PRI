@@ -4,13 +4,13 @@
   <xs:element name="studium">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="rocnik" maxOccurs="unbounded">
+        <xs:element name="rocnik" minOccurs="1" maxOccurs="unbounded">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="semestr" maxOccurs="unbounded">
+              <xs:element name="semestr" minOccurs="1" maxOccurs="2">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="predmet" maxOccurs="unbounded">
+                    <xs:element name="predmet" minOccurs="1">
                       <xs:complexType>
                         <xs:sequence>
                           <xs:element name="nazev" type="xs:string"/>
@@ -18,12 +18,12 @@
                             <xs:complexType>
                               <xs:sequence>
                                 <xs:element name="jmeno" type="xs:string"/>
-                                <xs:element name="telefon" type="xs:string"/>
-                                <xs:element name="email" type="xs:string"/>
+                                <xs:element name="telefon" type="xs:string" minOccurs="1"/>
+                                <xs:element name="email" type="xs:string" minOccurs="1"/>
                               </xs:sequence>
                             </xs:complexType>
                           </xs:element>
-                          <xs:element name="kredity" type="xs:int"/>
+                          <xs:element name="kredity" type="xs:positiveInteger"/>
                           <xs:element name="status" type="xs:string"/>
                           <xs:element name="zakonceni" type="xs:string"/>
                         </xs:sequence>
@@ -32,11 +32,10 @@
                       </xs:complexType>
                     </xs:element>
                   </xs:sequence>
-                  <xs:attribute name="nazev" type="xs:string"/>
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
-            <xs:attribute name="cislo" type="xs:int"/>
+            <xs:attribute name="cislo" type="xs:positiveInteger"/>
           </xs:complexType>
         </xs:element>
       </xs:sequence>
