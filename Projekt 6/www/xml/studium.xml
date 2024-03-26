@@ -1,0 +1,205 @@
+<studium>
+  <!-- Rocnik 1 -->
+  <rocnik cislo="1">
+    <!-- Zimni semestr -->
+    <semestr nazev="zimni">
+      <predmet katedra="KMA" kod="MA1">
+        <nazev>Matematická analýza I</nazev>
+        <vyucujici>
+          <jmeno>RNDr. Veronika Pitrová, PhD., Ph.D.</jmeno>
+          <telefon>475286677</telefon>
+          <email>Veronika.Pitrova@ujep.cz</email>
+        </vyucujici>
+        <kredity>6</kredity>
+        <status>A</status>
+        <zakonceni>Zkouška</zakonceni>
+      </predmet>
+      <predmet katedra="CJP" kod="0001">
+        <nazev>Angličtina 1</nazev>
+        <vyucujici>
+          <jmeno>Mgr. Dita Šimáčková</jmeno>
+          <telefon>---</telefon>
+          <email>dita.simackova@ujep.cz</email>
+        </vyucujici>
+        <kredity>2</kredity>
+        <status>A</status>
+        <zakonceni>Zkouška</zakonceni>
+      </predmet>
+      <predmet katedra="KI" kod="PGL1">
+        <nazev>Programování I</nazev>
+        <vyucujici>
+          <jmeno>Mgr. Jiří Fišer, Ph.D.</jmeno>
+          <telefon>475286715</telefon>
+          <email>Jiri.Fiser@ujep.cz</email>
+        </vyucujici>
+        <kredity>5</kredity>
+        <status>A</status>
+        <zakonceni>Zápočet</zakonceni>
+      </predmet>
+      <predmet katedra="KI" kod="MUL">
+        <nazev>Multimédia</nazev>
+        <vyucujici>
+          <jmeno>Ing. Pavel Kuba</jmeno>
+          <telefon>475286725</telefon>
+          <email>Pavel.Kuba@ujep.cz</email>
+        </vyucujici>
+        <kredity>3</kredity>
+        <status>A</status>
+        <zakonceni>Zkouška</zakonceni>
+      </predmet>
+      <predmet katedra="KI" kod="UDI">
+        <nazev>Úvod do informatiky</nazev>
+        <vyucujici>
+          <jmeno>Mgr. Jindřich Jelínek</jmeno>
+          <telefon>---</telefon>
+          <email>---</email>
+        </vyucujici>
+        <kredity>3</kredity>
+        <status>A</status>
+        <zakonceni>Zkouška</zakonceni>
+      </predmet>
+    </semestr>
+    <!-- Letni semestr -->
+    <semestr nazev="letni">
+      <predmet katedra="KMA" kod="MA2">
+        <nazev>Matematická analýza II</nazev>
+        <vyucujici>
+          <jmeno>RNDr. Veronika Pitrová, PhD., Ph.D.</jmeno>
+          <telefon>475286677</telefon>
+          <email>Veronika.Pitrova@ujep.cz</email>
+        </vyucujici>
+        <kredity>6</kredity>
+        <status>A</status>
+        <zakonceni>Zkouška</zakonceni>
+      </predmet>
+      <predmet katedra="CJP" kod="0002">
+        <nazev>Angličtina 2</nazev>
+        <vyucujici>
+          <jmeno>Mgr. Dita Šimáčková</jmeno>
+          <telefon>---</telefon>
+          <email>dita.simackova@ujep.cz</email>
+        </vyucujici>
+        <kredity>3</kredity>
+        <status>A</status>
+        <zakonceni>Zkouška</zakonceni>
+      </predmet>
+      <predmet katedra="KI" kod="ADS">
+        <nazev>Algoritmy a datové struktury</nazev>
+        <vyucujici>
+          <jmeno>Mgr. Květuše Sýkorová</jmeno>
+          <telefon>475286726</telefon>
+          <email>Kvetuse.Sykorova@ujep.cz</email>
+        </vyucujici>
+        <kredity>2</kredity>
+        <status>A</status>
+        <zakonceni>Zápočet</zakonceni>
+      </predmet>
+    </semestr>
+  </rocnik>
+  <!-- Rocnik 2 -->
+  <rocnik cislo="2">
+    <!-- Zimni semestr -->
+    <semestr nazev="zimni">
+      <predmet katedra="KI" kod="NME">
+        <nazev>Numerické metody</nazev>
+        <vyucujici>
+          <jmeno>doc. RNDr. Jiří Felcman, CSc.</jmeno>
+          <telefon>---</telefon>
+          <email>---</email>
+        </vyucujici>
+        <kredity>5</kredity>
+        <status>A</status>
+        <zakonceni>Zkouška</zakonceni>
+      </predmet>
+      <predmet katedra="KI" kod="SPL">
+        <nazev>Speciální programovací jazyky</nazev>
+        <vyucujici>
+          <jmeno>Mgr. Jiří Fišer, Ph.D.</jmeno>
+          <telefon>475286715</telefon>
+          <email>Jiri.Fiser@ujep.cz</email>
+        </vyucujici>
+        <kredity>2</kredity>
+        <status>A</status>
+        <zakonceni>Zápočet</zakonceni>
+      </predmet>
+    </semestr>
+    <!-- Letni semestr -->
+    <semestr nazev="letni">
+      <predmet katedra="KI" kod="OSY">
+        <nazev>Operační systémy</nazev>
+        <vyucujici>
+          <jmeno>Mgr. Jiří Fišer, Ph.D.</jmeno>
+          <telefon>475286715</telefon>
+          <email>Jiri.Fiser@ujep.cz</email>
+        </vyucujici>
+        <kredity>5</kredity>
+        <status>A</status>
+        <zakonceni>Zkouška</zakonceni>
+      </predmet>
+    </semestr>
+  </rocnik>
+  <!-- Rocnik 3 -->
+  <rocnik cislo="3">
+    <!-- Zimni semestr -->
+    <semestr nazev="zimni">
+      <predmet katedra="KMA" kod="MA3">
+        <nazev>Matematická analýza III</nazev>
+        <vyucujici>
+          <jmeno>RNDr. Veronika Pitrová, PhD., Ph.D.</jmeno>
+          <telefon>475286677</telefon>
+          <email>Veronika.Pitrova@ujep.cz</email>
+        </vyucujici>
+        <kredity>5</kredity>
+        <status>A</status>
+        <zakonceni>Zkouška</zakonceni>
+      </predmet>
+      <predmet katedra="KI" kod="DSY">
+        <nazev>Databázové systémy</nazev>
+        <vyucujici>
+          <jmeno>Mgr. Květuše Sýkorová</jmeno>
+          <telefon>475286726</telefon>
+          <email>Kvetuse.Sykorova@ujep.cz</email>
+        </vyucujici>
+        <kredity>5</kredity>
+        <status>A</status>
+        <zakonceni>Zkouška</zakonceni>
+      </predmet>
+      <predmet katedra="KI" kod="PGR">
+        <nazev>Počítačová grafika</nazev>
+        <vyucujici>
+          <jmeno>Ing. Pavel Kuba</jmeno>
+          <telefon>475286725</telefon>
+          <email>Pavel.Kuba@ujep.cz</email>
+        </vyucujici>
+        <kredity>4</kredity>
+        <status>A</status>
+        <zakonceni>Zkouška</zakonceni>
+      </predmet>
+    </semestr>
+    <!-- Letni semestr -->
+    <semestr nazev="letni">
+      <predmet katedra="KMA" kod="MSB">
+        <nazev>Matematický seminář</nazev>
+        <vyucujici>
+          <jmeno>RNDr. Veronika Pitrová, PhD., Ph.D.</jmeno>
+          <telefon>475286677</telefon>
+          <email>Veronika.Pitrova@ujep.cz</email>
+        </vyucujici>
+        <kredity>2</kredity>
+        <status>A</status>
+        <zakonceni>Zkouška</zakonceni>
+      </predmet>
+      <predmet katedra="KI" kod="BIA">
+        <nazev>Business Intelligence a analýza dat</nazev>
+        <vyucujici>
+          <jmeno>Mgr. Jindřich Jelínek</jmeno>
+          <telefon>---</telefon>
+          <email>---</email>
+        </vyucujici>
+        <kredity>4</kredity>
+        <status>A</status>
+        <zakonceni>Zkouška</zakonceni>
+      </predmet>
+    </semestr>
+  </rocnik>
+</studium>
