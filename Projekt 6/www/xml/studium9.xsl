@@ -4,7 +4,6 @@
     <xsl:output method="html" />
 
     <xsl:template match="/">
-        <!-- Vytvoření proměnné pro nejvyšší celkový počet kreditů a semestr, který mu odpovídá -->
         <xsl:variable name="maxCreditsSemester">
             <xsl:for-each select="//semestr">
                 <xsl:sort select="sum(predmet/kredity)" data-type="number" order="descending"/>
@@ -13,8 +12,6 @@
                 </xsl:if>
             </xsl:for-each>
         </xsl:variable>
-
-        <!-- Výběr předmětů pro semestr s nejvyšším celkovým počtem kreditů -->
         <xsl:variable name="selectedSubjects" select="//semestr[@nazev = $maxCreditsSemester]/predmet"/>
 
         <html>
@@ -47,7 +44,6 @@
                         <th>Status</th>
                         <th>Zakončení</th>
                     </tr>
-                    <!-- Vypsání předmětů pro vybraný semestr -->
                     <xsl:apply-templates select="$selectedSubjects"/>
                 </table>
             </body>

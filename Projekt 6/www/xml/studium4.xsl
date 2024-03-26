@@ -58,8 +58,6 @@
                         <xsl:sort select="kredity" data-type="number" order="descending"/>
                     </xsl:apply-templates>
                 </table>
-
-                <!-- Celkový počet kreditních bodů -->
                 <xsl:variable name="totalCredits">
                     <xsl:value-of select="sum(//rocnik[last()]/semestr[last()]/predmet/kredity)"/>
                 </xsl:variable>

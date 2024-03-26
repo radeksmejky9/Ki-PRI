@@ -4,10 +4,9 @@
 
     <xsl:output method="html" indent="yes"/>
 
-    <!-- Identity transform -->
-    <xsl:template match="@*|node()">
+    <xsl:template match="/">
         <xsl:copy>
-            <xsl:apply-templates select="@*|node()"/>
+            <xsl:apply-templates select="/"/>
         </xsl:copy>
     </xsl:template>
 
