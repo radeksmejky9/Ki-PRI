@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="studium">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="rocnik" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="semestr" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="predmet" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="nazev" type="xs:string"/>
+                          <xs:element name="vyucujici">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="jmeno" type="xs:string"/>
+                                <xs:element name="telefon" type="xs:string"/>
+                                <xs:element name="email" type="xs:string"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="kredity" type="xs:int"/>
+                          <xs:element name="status" type="xs:string"/>
+                          <xs:element name="zakonceni" type="xs:string"/>
+                        </xs:sequence>
+                        <xs:attribute name="katedra" type="xs:string"/>
+                        <xs:attribute name="kod" type="xs:string"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="nazev" type="xs:string"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="cislo" type="xs:int"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
