@@ -23,6 +23,7 @@
             </head>
             <body>
                 <h1>Seznam předmětů v posledním semestru</h1>
+                <h2>Seřazeno podle kódu předmětu:</h2>
                 <table>
                     <tr>
                         <th>Kód</th>
@@ -35,8 +36,33 @@
                         <th>Status</th>
                         <th>Zakončení</th>
                     </tr>
-                    <xsl:apply-templates select="//rocnik[last()]/semestr[last()]/predmet"/>
+                    <xsl:apply-templates select="//rocnik[last()]/semestr[last()]/predmet">
+                        <xsl:sort select="@kod" order="ascending"/>
+                    </xsl:apply-templates>
                 </table>
+
+                <h2>Seřazeno podle počtu kreditů:</h2>
+                <table>
+                    <tr>
+                        <th>Kód</th>
+                        <th>Název</th>
+                        <th>Katedra</th>
+                        <th>Vyučující</th>
+                        <th>Telefon</th>
+                        <th>Email</th>
+                        <th>Kredity</th>
+                        <th>Status</th>
+                        <th>Zakončení</th>
+                    </tr>
+                    <xsl:apply-templates select="//rocnik[last()]/semestr[last()]/predmet">
+                        <xsl:sort select="kredity" data-type="number" order="descending"/>
+                    </xsl:apply-templates>
+                </table>
+                <xsl:variable name="totalCredits">
+                    <xsl:value-of select="sum(//rocnik[last()]/semestr[last()]/predmet/kredity)"/>
+                </xsl:variable>
+                <p>Celkem kreditních bodů = <xsl:value-of select="$totalCredits"/>
+                </p>
             </body>
         </html>
     </xsl:template>
