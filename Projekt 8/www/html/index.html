@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        table.books-table {
+            border-collapse: collapse;
+            width: auto;
+            margin: 0 auto;
+        }
+
+        table.books-table th,
+        table.books-table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table.books-table th {
+            background-color: #f2f2f2;
+            color: black;
+            font-weight: bold;
+        }
+
+        .selected {
+            background-color: #cceeff;
+        }
+
+        .mouse-over {
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Knihy</h1>
+    <div id="books"></div>
+    <script src="dom.js"></script>
+</body>
+
+</html>
