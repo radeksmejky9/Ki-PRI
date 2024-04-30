@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+
+<body onload="Clock()">
+  <svg width="300" height="300">
+    <g id="clock" transform="translate(150, 150)">
+      <circle r="140" fill="white" stroke="black" stroke-width="4" />
+    </g>
+  </svg>
+  <div id="time"></div>
+
+  <script>
+    let addElem = (parent, tag) => {
+      let elem = document.createElementNS('http://www.w3.org/2000/svg', tag)
+      parent.append(elem)
+      return elem
+    }
+
+    function Clock() {
+      let divTime = document.getElementById('time');
+      let clock = document.getElementById('clock');
+
+      let secondHand = addElem(clock, 'line');
+      secondHand.setAttribute('x1', '0');
+      secondHand.setAttribute('y1', '0');
+      secondHand.setAttribute('x2', '0');
+      secondHand.setAttribute('y2', '-130');
+      secondHand.setAttribute('stroke', 'black');
+      secondHand.setAttribute('stroke-width', '2');
+
+      let minuteHand = addElem(clock, 'line');
+      minuteHand.setAttribute('x1', '0');
+      minuteHand.setAttribute('y1', '0');
+      minuteHand.setAttribute('x2', '0');
+      minuteHand.setAttribute('y2', '-110');
+      minuteHand.setAttribute('stroke', 'black');
+      minuteHand.setAttribute('stroke-width', '4');
+
+      let hourHand = addElem(clock, 'line');
+      hourHand.setAttribute('x1', '0');
+      hourHand.setAttribute('y1', '0');
+      hourHand.setAttribute('x2', '0');
+      hourHand.setAttribute('y2', '-100');
+      hourHand.setAttribute('stroke', 'black');
+      hourHand.setAttribute('stroke-width', '6');
+
+      let hub = addElem(clock, 'circle');
+      hub.setAttribute('r', '10');
+      hub.setAttribute('fill', 'cyan');
+
+      let tick = () => {
+        let now = new Date();
+        divTime.textContent = now.toLocaleTimeString();
+
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        let seconds = now.getSeconds();
+
+        let secondsAngle = seconds * 6;
+        let minutesAngle = minutes * 6 + seconds * 0.1;
+        let hoursAngle = ((hours % 12) / 12) * 360 + minutes / 2;
+
+        secondHand.setAttribute('transform', `rotate(${secondsAngle})`);
+        minuteHand.setAttribute('transform', `rotate(${minutesAngle})`);
+        hourHand.setAttribute('transform', `rotate(${hoursAngle})`);
+      };
+
+      tick();
+      setInterval(tick, 1000);
+    }
+  </script>
+</body>
+
+</html>
