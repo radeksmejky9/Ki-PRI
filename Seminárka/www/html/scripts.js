@@ -1,44 +1,30 @@
-function generateAndUploadXML() {
-    const id = document.getElementById('id').value;
-    const name = document.getElementById('name').value;
-    const symbol = document.getElementById('symbol').value;
-    const image = document.getElementById('image').value;
-    const price_usd = document.getElementById('price_usd').value;
-
-    const xml = `<cryptocurrencies>
-                            <cryptocurrency>
-                                <id>${id}</id>
-                                <name>${name}</name>
-                                <symbol>${symbol}</symbol>
-                                <image>${image}</image>
-                                <price_usd>${price_usd}</price_usd>
-                            </cryptocurrency>   
-                        </cryptocurrencies>`;
-
-    fetch(`../upload.php?symbol=${symbol}`, {
+function uploadXMLFile(xml, symbol) {
+    fetch('../upload.php?symbol=' + symbol, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/xml'
-        },
         body: xml
     })
         .then(response => {
             if (response.ok) {
-                alert('XML uploaded successfully.');
+                alert('XML soubor se úspěšně nahrál!');
             } else {
-                alert('Failed to upload XML.');
+                response.text().then(errorMessage => {
+                    alert('XML soubor se nenahrál úspěšně: ' + errorMessage);
+                });
             }
         })
         .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred while uploading XML.');
+            console.error('Error uploading XML file:', error);
+            alert('XML soubor se nenahrál úspěšně:');
         });
+
+
+    reader.readAsText(file);
 }
 
 function deleteFile() {
     const filename = document.getElementById('cryptocurrency').value;
     if (!filename) {
-        alert('Please select a file to delete.');
+        alert('Vyber soubor ke smazání');
         return;
     }
 
@@ -51,13 +37,13 @@ function deleteFile() {
     })
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error('Připojení k síti selhalo');
             }
             return response.text();
         })
         .then(response => {
             if (response === 'success') {
-                alert('File deleted successfully.');
+                alert('Soubor byl úspěšně smazán.');
                 fetchXMLFiles();
                 location.reload();
             } else {
@@ -70,7 +56,7 @@ function fetchXMLFiles() {
     fetch('../find_xml_files.php')
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error('Připojení k síti selhalo');
             }
             return response.json();
         })
@@ -104,7 +90,7 @@ function loadCryptocurrencyDetails() {
     fetch(xmlFilePath)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Failed to fetch XML file');
+                throw new Error('Chyba při načítání XML souboru');
             }
             return response.text();
         })
@@ -119,7 +105,7 @@ function loadCryptocurrencyDetails() {
             const url = `create_file.php?id=${id}&name=${name}&symbol=${symbol}&image=${image}&price_usd=${price_usd}`;
             window.location.href = url;
         })
-        .catch(error => console.error('Error loading XML file:', error));
+        .catch(error => console.error('Chyba při načítání XML souboru:', error));
 }
 
 function fetchData() {
@@ -127,7 +113,7 @@ function fetchData() {
     xhr.open('GET', '../fetch_crypto_data.php', true);
     xhr.onload = function () {
         if (xhr.status === 200) {
-            alert('Data fetched successfully!');
+            alert('Data se úspěšně nahrála!');
         }
     };
     xhr.send();

@@ -31,7 +31,7 @@
                 </div>
                 <div>
                     <label for="image" class="block text-md font-medium text-yellow-400">Image URL:</label>
-                    <input type="text" id="image" name="image" class="mt-1 block font-semibold w-full bg-yellow-400 border-yellow-400 p-1 rounded-md text-xl" value="<?php echo isset($_GET['image']) ? htmlspecialchars($_GET['image']) : ''; ?>">
+                    <input type="url" id="image" name="image" class="mt-1 block font-semibold w-full bg-yellow-400 border-yellow-400 p-1 rounded-md text-xl" value="<?php echo isset($_GET['image']) ? htmlspecialchars($_GET['image']) : ''; ?>">
                 </div>
                 <div>
                     <label for="price_usd" class="block text-md font-medium text-yellow-400">Price (USD):</label>
@@ -44,6 +44,24 @@
         </div>
     </div>
     <script>
+        function generateAndUploadXML() {
+            const id = document.getElementById('id').value;
+            const name = document.getElementById('name').value;
+            const symbol = document.getElementById('symbol').value;
+            const image = document.getElementById('image').value;
+            const price_usd = document.getElementById('price_usd').value;
+
+            const xml = `<cryptocurrency>
+                <id>${id}</id>
+                <name>${name}</name>
+                <symbol>${symbol}</symbol>
+                <image>${image}</image>
+                <price_usd>${price_usd}</price_usd>
+            </cryptocurrency>`;
+            uploadXMLFile(xml, symbol)
+        }
+
+
         document.addEventListener('DOMContentLoaded', function() {
             loadCryptocurrencyDetails();
         });

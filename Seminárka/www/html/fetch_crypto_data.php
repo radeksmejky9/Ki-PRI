@@ -10,14 +10,14 @@ curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0');
 $data = curl_exec($ch);
 
 if ($data === FALSE) {
-    die('Error fetching data from CoinGecko API: ' . curl_error($ch));
+    die('Nepodařilo se připojit k API.' . curl_error($ch));
 }
 
 curl_close($ch);
 
 $cryptos = json_decode($data, true);
 if ($cryptos === NULL) {
-    die('Error decoding JSON data');
+    die('Nepodařilo se dekódovat JSON.');
 }
 
 

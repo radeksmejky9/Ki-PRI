@@ -5,12 +5,12 @@ if (isset($_POST['filename'])) {
 
     if (file_exists($file_path)) {
         if (unlink($file_path)) {
-            echo "success";
+            echo "Soubor $filename byl úspěšně smazán.";
         } else {
-            echo "Failed to delete the file.";
+            echo "Chyba!";
         }
     } else {
-        echo "File '$filename' does not exist.";
+        echo "Soubor $filename neexistuje";
     }
     exit;
 }

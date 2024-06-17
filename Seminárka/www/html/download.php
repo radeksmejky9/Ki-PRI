@@ -10,8 +10,8 @@ if (isset($_GET['cryptocurrency']) && !empty($_GET['cryptocurrency'])) {
         readfile($filePath);
         exit;
     } else {
-        echo "File not found!";
+        echo "Soubor neexistuje!";
     }
 } else {
-    echo "Invalid request!";
+    echo "Chyba!";
 }

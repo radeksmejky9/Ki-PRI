@@ -4,7 +4,7 @@ $dir = 'data/';
 if (!is_dir($dir)) {
     $response = array(
         'success' => false,
-        'message' => 'Directory does not exist or cannot be accessed.'
+        'message' => 'Cesta neexistuje a nebo není přístupná'
     );
 } else {
     $files = array_diff(scandir($dir), array('..', '.'));
@@ -16,7 +16,7 @@ if (!is_dir($dir)) {
     if (empty($xmlFiles)) {
         $response = array(
             'success' => false,
-            'message' => 'No XML files found in the directory.'
+            'message' => 'Na dané cestě se nenachází žádný XML soubor.'
         );
     } else {
         $response = array(
