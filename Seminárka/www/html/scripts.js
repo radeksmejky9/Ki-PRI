@@ -87,15 +87,8 @@ function fetchXMLFiles() {
 }
 
 function download_all_files() {
-    const allCryptocurrencies = document.getElementById('cryptocurrency').options;
-
-    const selectedCryptocurrencies = [];
-    for (let i = 0; i < allCryptocurrencies.length; i++) {
-        selectedCryptocurrencies.push(allCryptocurrencies[i].value);
-    }
-    const allCryptocurrenciesString = selectedCryptocurrencies.join(',');
-    const downloadAllUrl = `../download_all.php?cryptocurrencies=${allCryptocurrenciesString}`;
-    window.location.href = downloadAllUrl;
+    const downloadUrl = `../download_all.php`;
+    window.location.href = downloadUrl;
 }
 
 function download_file() {
