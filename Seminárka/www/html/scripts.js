@@ -58,8 +58,8 @@ function deleteFile() {
         .then(response => {
             if (response === 'success') {
                 alert('File deleted successfully.');
-
                 fetchXMLFiles();
+                location.reload();
             } else {
                 alert(response);
             }

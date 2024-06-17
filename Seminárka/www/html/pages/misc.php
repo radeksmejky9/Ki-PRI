@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Ostatní operace</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../scripts.js"></script>
 </head>
 
