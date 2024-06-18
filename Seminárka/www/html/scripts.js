@@ -22,6 +22,25 @@ function uploadXMLFile(xml, symbol) {
     reader.readAsText(file);
     location.reload();
 }
+function addFile() {
+    const fileInput = document.getElementById('cryptocurrency');
+    const file = fileInput.files[0];
+
+    if (!file) {
+        alert('Je potřeba vybrat soubor.');
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+        const xml = event.target.result;
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xml, 'text/xml');
+        const symbol = xmlDoc.querySelector('symbol').textContent;
+        uploadXMLFile(xml, symbol)
+    };
+    reader.readAsText(file);
+}
 
 function deleteFile() {
     const filename = document.getElementById('cryptocurrency').value;
@@ -76,7 +95,7 @@ function fetchXMLFiles() {
 }
 
 function download_all_files() {
-    const downloadUrl = `../download_all.php`;
+    const downloadUrl = `../merge_all.php`;
     window.location.href = downloadUrl;
 }
 
@@ -123,69 +142,24 @@ function fetchData() {
     location.reload();
 }
 
-function displayData() {
-    fetch('../find_xml_files.php')
-        .then(response => response.json())
-        .then(data => {
-            if (Array.isArray(data.files)) {
-                data.files.forEach(fileName => {
-                    fetchXML(fileName);
-                });
-            } else {
-                console.error('Files data is not an array:', data.files);
-            }
-        })
-        .catch(error => console.error('Error fetching XML files:', error));
-}
 
-function fetchXML(fileName) {
-    fetch('../data/' + fileName)
+function renderCryptoCards() {
+    fetch('../crypto.xsl')
         .then(response => response.text())
         .then(xmlText => {
             let parser = new DOMParser();
-            let xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-            renderCryptoCards(xmlDoc);
+            let xsl = parser.parseFromString(xmlText, 'text/xml');
+            let divCryptoList = document.getElementById('crypto-list');
+            xsltProcessor = new XSLTProcessor();
+            xsltProcessor.importStylesheet(xsl);
+            fetch('../merge_all.php').then(response => response.text()).then(xmlCrypto => {
+                const parser = new DOMParser();
+                xmlCrypto = parser.parseFromString(xmlCrypto, 'application/xml')
+                resultDocument = xsltProcessor.transformToFragment(xmlCrypto, document);
+                divCryptoList.appendChild(resultDocument);
+            })
+
+
         })
-        .catch(error => console.error('Error fetching XML:', error));
-}
 
-function renderCryptoCards(xmlDoc) {
-    let divCryptoList = document.getElementById('crypto-list');
-    let xmlCrypto = xmlDoc.getElementsByTagName('cryptocurrency');
-
-    for (let xmlCurrency of xmlCrypto) {
-        let name = xmlCurrency.getElementsByTagName('name')[0].innerHTML;
-        let symbol = xmlCurrency.getElementsByTagName('symbol')[0].innerHTML;
-        let image = xmlCurrency.getElementsByTagName('image')[0].innerHTML;
-        let priceUSD = xmlCurrency.getElementsByTagName('price_usd')[0]?.innerHTML || '';
-        let cryptoCard = document.createElement('div');
-        cryptoCard.classList.add('flex', 'items-center', 'bg-black', 'p-4', 'mb-4', 'rounded-lg', 'shadow-lg');
-
-        let imageElement = document.createElement('img');
-        imageElement.classList.add('crypto-image', 'rounded-full', 'mr-1');
-        imageElement.setAttribute('src', image);
-        imageElement.setAttribute('alt', name);
-
-        let textContainer = document.createElement('div');
-        textContainer.classList.add('flex', 'flex-col', 'justify-center');
-
-        let nameElement = document.createElement('h2');
-        nameElement.classList.add('text-yellow-400', 'text-lg', 'font-bold', 'mb-1');
-        nameElement.textContent = name;
-
-        let symbolElement = document.createElement('p');
-        symbolElement.classList.add('ml-1', 'text-white', 'text-sm', 'mb-1');
-        symbolElement.textContent = symbol;
-
-        let priceElement = document.createElement('p');
-        priceElement.classList.add('text-white', 'text-lg', 'font-bold', 'w-1/4', 'text-right');
-        priceElement.textContent = '$' + priceUSD;
-
-        cryptoCard.appendChild(nameElement);
-        cryptoCard.appendChild(symbolElement);
-        cryptoCard.appendChild(imageElement);
-        cryptoCard.appendChild(priceElement);
-
-        divCryptoList.appendChild(cryptoCard);
-    }
 }

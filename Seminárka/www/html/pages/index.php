@@ -27,32 +27,13 @@
     <div id="crypto-list" class="container mx-auto mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
 
     <script>
-        function addFile() {
-            const fileInput = document.getElementById('cryptocurrency');
-            const file = fileInput.files[0];
-
-            if (!file) {
-                alert('Je potřeba vybrat soubor.');
-                return;
-            }
-
-            const reader = new FileReader();
-            reader.onload = (event) => {
-                const xml = event.target.result;
-                const parser = new DOMParser();
-                const xmlDoc = parser.parseFromString(xml, 'text/xml');
-                const symbol = xmlDoc.querySelector('symbol').textContent;
-                uploadXMLFile(xml, symbol)
-            };
-            reader.readAsText(file);
-        }
         var input = document.getElementById('cryptocurrency');
         input.addEventListener('input', function() {
             addFile();
         });
         document.addEventListener('DOMContentLoaded', function() {
             fetchXMLFiles();
-            displayData();
+            renderCryptoCards();
         });
     </script>
 </body>

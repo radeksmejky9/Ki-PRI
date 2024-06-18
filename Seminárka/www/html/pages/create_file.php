@@ -51,13 +51,16 @@
             const image = document.getElementById('image').value;
             const price_usd = document.getElementById('price_usd').value;
 
-            const xml = `<cryptocurrency>
-                <id>${id}</id>
-                <name>${name}</name>
-                <symbol>${symbol}</symbol>
-                <image>${image}</image>
-                <price_usd>${price_usd}</price_usd>
-            </cryptocurrency>`;
+            const xml = `
+            <cryptocurrencies>
+                <cryptocurrency>
+                    <id>${id}</id>
+                    <name>${name}</name>
+                    <symbol>${symbol}</symbol>
+                    <image>${image}</image>
+                    <price_usd>${price_usd}</price_usd>
+                </cryptocurrency>
+            </cryptocurrencies>`;
             uploadXMLFile(xml, symbol)
         }
 

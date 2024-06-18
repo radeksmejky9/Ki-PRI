@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="cryptocurrency">
+    <xs:element name="cryptocurrencies">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="id" type="xs:string"/>
-                <xs:element name="name" type="xs:string"/>
-                <xs:element name="symbol" type="xs:string"/>
-                <xs:element name="image">
-                    <xs:simpleType>
-                        <xs:restriction base="xs:anyURI">
-                            <xs:pattern value="https?://.*"/>
-                        </xs:restriction>
-                    </xs:simpleType>
+                <xs:element name="cryptocurrency" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="id" type="xs:string"/>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="symbol" type="xs:string"/>
+                            <xs:element name="image">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:anyURI">
+                                        <xs:pattern value="https?://.*"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="price_usd" type="xs:decimal"/>
+                        </xs:sequence>
+                    </xs:complexType>
                 </xs:element>
-                <xs:element name="price_usd" type="xs:decimal"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

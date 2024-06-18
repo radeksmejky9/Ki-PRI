@@ -1,0 +1,9 @@
+<cryptocurrencies>
+    <cryptocurrency>
+        <id>Šmejkal</id>
+        <name>Šmejkal</name>
+        <symbol>Smj</symbol>
+        <image>https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0BRfR4I3pOiaej8DuRQDZS1pmbjIO3pAvN7YzfNYTm4FP12n7O9stcpMuy_fg49oU-zZsqr4mB2o_S5Px7L8TokncC7TBnT20lYJtlQ7zw0hDf5Yf-tJTuSQFLv5VBg2_zSQMedo-IEc/s1600/3494.jpg</image>
+        <price_usd>1</price_usd>
+    </cryptocurrency>
+</cryptocurrencies>

@@ -28,6 +28,10 @@ foreach ($cryptos as $crypto) {
     $xml->addChild('name', $crypto['name']);
     $xml->addChild('symbol', $crypto['symbol']);
     $xml->addChild('image', $crypto['image']);
-    $xml->addChild('price_usd', $crypto['current_price']);
+    $currentPrice = $crypto['current_price'];
+    if (strpos($currentPrice, 'E') !== false || strpos($currentPrice, 'e') !== false) {
+        $currentPrice = sprintf('%f', $currentPrice);
+    }
+    $xml->addChild('price_usd', $currentPrice);
     $xml->asXML("data/{$crypto['symbol']}.xml");
 }
