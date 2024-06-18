@@ -6,6 +6,7 @@ function uploadXMLFile(xml, symbol) {
         .then(response => {
             if (response.ok) {
                 alert('XML soubor se úspěšně nahrál!');
+                location.reload();
             } else {
                 response.text().then(errorMessage => {
                     alert('XML soubor se nenahrál úspěšně: ' + errorMessage);
@@ -19,6 +20,7 @@ function uploadXMLFile(xml, symbol) {
 
 
     reader.readAsText(file);
+    location.reload();
 }
 
 function deleteFile() {
@@ -51,6 +53,7 @@ function deleteFile() {
             }
         })
         .catch(error => console.error('Error deleting file:', error));
+    location.reload();
 }
 function fetchXMLFiles() {
     fetch('../find_xml_files.php')
